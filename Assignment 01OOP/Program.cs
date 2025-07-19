@@ -28,6 +28,36 @@
             Console.WriteLine($"The distance between the two points is: {distance}");
 
             #endregion
+
+            #region Q2
+
+            Person[] people = new Person[3];
+
+            for (int i = 0; i < 3; i++)
+            {
+                Console.Write($"Enter name of person {i + 1}: ");
+                string name = Console.ReadLine();
+
+                Console.Write($"Enter age of person {i + 1}: ");
+                int age = Convert.ToInt32(Console.ReadLine());
+
+                people[i] = new Person(name, age);
+
+            }
+
+            Person oldest = people [0];
+            for (int i = 1; i < people.Length; i++)
+            {
+                if (people[i].Age > oldest.Age)
+                {
+                    oldest = people[i];
+                }
+            }
+
+
+            Console.WriteLine($"The oldest person is: {oldest.Name}, Age: {oldest.Age}");
+
+            #endregion
         }
     }
 }
